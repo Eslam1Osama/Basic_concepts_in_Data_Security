@@ -1,8 +1,6 @@
 
 # Data Security Learning Module: Basic Concepts
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
 An interactive, single-page web application designed to teach the fundamental concepts of Data Security for the **ECE4304** course. This project converts traditional static material into a responsive, engaging, and accessible learning experience for students.
 
 ### [Live Demo Link](https://basic-concepts-in-data-security.vercel.app/)
@@ -41,19 +39,14 @@ This module provides a comprehensive overview of the essential concepts in data 
 -   **[FileSaver.js](https://github.com/eligrey/FileSaver.js/)**: For saving the generated files.
 -   **[Font Awesome](https://fontawesome.com/)**: For icons.
 
-## 🚀 Getting Started
+## ⚖️ License & Copyright
 
-No complex build steps or dependencies are required.
+**© 2025 Eng. Eslam Osama. All Rights Reserved.**
 
-1.  Clone the repository:
-    ```bash
-    git clone [https://github.com/your-username/data-security-basic-concepts-module.git](https://github.com/your-username/data-security-basic-concepts-module.git)
-    ```
-2.  Navigate to the project directory:
-    ```bash
-    cd data-security-basic-concepts-module
-    ```
-3.  Open the `index.html` file in your browser.
+This content is protected by copyright law. Unauthorized copying, distribution, or use of this material is strictly prohibited. The code, design, and content of this educational module are the exclusive property of the creator. Any reproduction or distribution without express written permission is a violation of copyright law.
+
+This module is provided for educational purposes only. The creator makes no warranties about the completeness, reliability, or accuracy of this information.
+
 
 ## Acknowledgments
 
