@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+# Allow access to all content
+Allow: /
+Allow: /assets/
+Allow: /media/
+
+# Disallow access to sensitive or temporary files
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /temp/
+Disallow: /cache/
+
+# Sitemap location
+Sitemap: https://basic-concepts-in-data-security.vercel.app/sitemap.xml
+
+# Crawl delay (optional)
+Crawl-delay: 1

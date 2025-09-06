@@ -3,7 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Security Learning Module</title>
+
+    <!-- Primary Meta Tags -->
+    <title>Data Security Learning Module | Basic Concepts in Cybersecurity</title>
+    <meta name="title" content="Data Security Learning Module | Basic Concepts in Cybersecurity">
+    <meta name="description" content="Interactive learning platform for data security fundamentals. Master CIA Triad, authentication, encryption, and cybersecurity threats. Created for ECE4304 course at AASTMT.">
+    <meta name="keywords" content="data security, cybersecurity, CIA triad, encryption, authentication, computer security, AASTMT, ECE4304">
+    <meta name="author" content="Eng. Eslam Osama">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://basic-concepts-in-data-security.vercel.app/">
+
+    <!-- Favicon and Icons -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.svg">
+    <link rel="apple-touch-icon" href="assets/logo.svg">
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://basic-concepts-in-data-security.vercel.app/">
+    <meta property="og:title" content="Data Security Learning Module | Basic Concepts in Cybersecurity">
+    <meta property="og:description" content="Interactive learning platform for data security fundamentals. Master CIA Triad, authentication, encryption, and cybersecurity threats.">
+    <meta property="og:image" content="https://basic-concepts-in-data-security.vercel.app/assets/logo.svg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Data Security Learning Module">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://basic-concepts-in-data-security.vercel.app/">
+    <meta property="twitter:title" content="Data Security Learning Module | Basic Concepts in Cybersecurity">
+    <meta property="twitter:description" content="Interactive learning platform for data security fundamentals. Master CIA Triad, authentication, encryption, and cybersecurity threats.">
+    <meta property="twitter:image" content="https://basic-concepts-in-data-security.vercel.app/assets/logo.svg">
+    <meta property="twitter:creator" content="@eslam_osama">
+
+    <!-- Microsoft Tiles -->
+    <meta name="msapplication-TileColor" content="#00ACC1">
+    <meta name="msapplication-config" content="browserconfig.xml">
+    <meta name="theme-color" content="#00ACC1">
+
+    <!-- Mobile Web App -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Data Security Module">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Data Security Learning Module",
+        "description": "Interactive learning platform for data security fundamentals including CIA Triad, authentication, encryption, and cybersecurity threats.",
+        "url": "https://basic-concepts-in-data-security.vercel.app/",
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "Web Browser",
+        "author": {
+            "@type": "Person",
+            "name": "Eng. Eslam Osama",
+            "jobTitle": "Lead Developer & Teaching Assistant",
+            "affiliation": {
+                "@type": "EducationalOrganization",
+                "name": "Arab Academy for Science, Technology & Maritime Transport",
+                "department": "Computer Engineering Department"
+            }
+        },
+        "publisher": {
+            "@type": "EducationalOrganization",
+            "name": "Arab Academy for Science, Technology & Maritime Transport",
+            "department": "Computer Engineering Department"
+        },
+        "educationalUse": "Professional Development",
+        "learningResourceType": "Interactive Learning Module",
+        "teaches": [
+            "CIA Triad (Confidentiality, Integrity, Availability)",
+            "Authentication & Authorization",
+            "Security Threats & Attacks",
+            "Encryption Techniques",
+            "Cybersecurity Fundamentals"
+        ],
+        "inLanguage": "en",
+        "license": "© 2025 Eng. Eslam Osama. All Rights Reserved.",
+        "version": "1.0.0",
+        "datePublished": "2024-12-19",
+        "dateModified": "2024-12-19"
+    }
+    </script>
+
+    <!-- Security & Performance Meta Tags -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), interest-cohort=()">
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- DNS Prefetch for Performance -->
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+    <!-- Preload Critical Resources -->
+    <link rel="modulepreload" href="sw.js">
+
+    <!-- External Dependencies -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
@@ -51,6 +156,19 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        /* Screen Reader Only */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
         }
 
         body {
@@ -109,7 +227,7 @@
         .toggle-switch {
             width: 56px; height: 28px; background: var(--blue1); border-radius: 20px;
             position: relative; cursor: pointer; transition: background 0.3s;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border: none;
         }
         .toggle-slider {
             position: absolute; top: 3px; left: 3px; width: 22px; height: 22px;
@@ -171,7 +289,7 @@
         }
         
         .navigation {
-            background: var(--nav-bg); backdrop-filter: blur(10px); border-radius: 50px;
+            background: var(--nav-bg); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); border-radius: 50px;
             padding: 15px; margin-bottom: 30px; display: flex; justify-content: center;
             flex-wrap: wrap; gap: 10px; position: sticky; top: 10px; z-index: 100;
         }
@@ -197,7 +315,7 @@
         }
 
         .section {
-            background: var(--section-bg); backdrop-filter: blur(10px); border-radius: 20px;
+            background: var(--section-bg); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); border-radius: 20px;
             padding: clamp(20px, 4vw, 40px); margin-bottom: 25px; box-shadow: var(--shadow);
             display: none; animation: fadeIn 0.5s ease-in-out;
             min-height: 75vh;
@@ -301,7 +419,7 @@
 
         .loading-screen {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(255,255,255,0.8); backdrop-filter: blur(10px);
+            background: rgba(255,255,255,0.8); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
             display: flex; flex-direction: column; justify-content: center; align-items: center;
             z-index: 9999; color: var(--text-main); font-size: 1.5em;
             opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0.3s ease;
@@ -388,39 +506,50 @@
     <div class="container">
         <div class="header">
             <div class="theme-toggle">
-                <div class="toggle-switch" id="themeSwitch">
+                <button class="toggle-switch" id="themeSwitch" aria-label="Toggle theme between light and dark mode" aria-pressed="false" role="switch">
                     <div class="toggle-slider">
-                        <span class="icon-sun"><i class="fas fa-sun"></i></span>
-                        <span class="icon-moon"><i class="fas fa-moon"></i></span>
+                        <span class="icon-sun" aria-hidden="true"><i class="fas fa-sun"></i></span>
+                        <span class="icon-moon" aria-hidden="true"><i class="fas fa-moon"></i></span>
                     </div>
-                </div>
+                </button>
             </div>
             <h1><i class="fas fa-shield-alt"></i> Data Security Learning Module</h1>
             <p>Basic concepts in Data Security</p>
             <p>Created By Eng. Eslam Osama</p>
-            <div class="progress-bar">
+            <div class="progress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" aria-label="Learning progress">
                 <div class="progress-fill" id="progressBar"></div>
             </div>
-            <div class="download-buttons">
-                 <a href="assets/sheet1_intro.pdf" target="_blank" class="download-btn">
-                    <i class="fas fa-file-pdf"></i> Download Original Sheet
+            <div class="download-buttons" role="group" aria-label="Download options">
+                 <a href="assets/sheet1_intro.pdf" target="_blank" class="download-btn" aria-label="Download original PDF sheet in new tab">
+                    <i class="fas fa-file-pdf" aria-hidden="true"></i> Download Original Sheet
                 </a>
-                <button class="download-btn" onclick="downloadFullPageZip()">
-                    <i class="fas fa-images"></i> Download Sections as Images (ZIP)
+                <button class="download-btn" onclick="downloadFullPageZip()" aria-label="Download all sections as high-quality PNG images in ZIP format">
+                    <i class="fas fa-images" aria-hidden="true"></i> Download Sections as Images (ZIP)
                 </button>
             </div>
         </div>
 
         <div class="navigation">
-            <div class="nav-buttons">
-                <button class="nav-btn active" data-section="basics"><i class="fas fa-book-open"></i> Basics</button>
-                <button class="nav-btn" data-section="threats"><i class="fas fa-bug"></i> Threats</button>
-                <button class="nav-btn" data-section="auth"><i class="fas fa-id-card"></i> Auth</button>
-                <button class="nav-btn" data-section="attacks"><i class="fas fa-bolt"></i> Attacks</button>
-                <button class="nav-btn" data-section="terms"><i class="fas fa-key"></i> Terms</button>
-            </div>
+            <nav class="nav-buttons" role="navigation" aria-label="Main navigation">
+                <button class="nav-btn active" data-section="basics" aria-label="Navigate to Basic Concepts section" aria-current="page">
+                    <i class="fas fa-book-open" aria-hidden="true"></i> Basics
+                </button>
+                <button class="nav-btn" data-section="threats" aria-label="Navigate to Security Threats section">
+                    <i class="fas fa-bug" aria-hidden="true"></i> Threats
+                </button>
+                <button class="nav-btn" data-section="auth" aria-label="Navigate to Authentication & Authorization section">
+                    <i class="fas fa-id-card" aria-hidden="true"></i> Auth
+                </button>
+                <button class="nav-btn" data-section="attacks" aria-label="Navigate to Security Attacks section">
+                    <i class="fas fa-bolt" aria-hidden="true"></i> Attacks
+                </button>
+                <button class="nav-btn" data-section="terms" aria-label="Navigate to Important Terminologies section">
+                    <i class="fas fa-key" aria-hidden="true"></i> Terms
+                </button>
+            </nav>
             <div class="nav-dropdown-container">
-                <select id="navDropdown" class="nav-dropdown">
+                <label for="navDropdown" class="sr-only">Navigate to section</label>
+                <select id="navDropdown" class="nav-dropdown" aria-label="Navigate to different sections">
                     <option value="basics">Basic Concepts</option>
                     <option value="threats">Security Threats</option>
                     <option value="auth">Authentication & Authorization</option>
@@ -436,7 +565,7 @@
                 <button class="download-section-btn" onclick="downloadSectionPng(this)"><i class="fas fa-download"></i></button>
             </div>
             <div class="section-image-container">
-                <img src="media/image1.png" alt="CIA Triad Diagram" loading="lazy">
+                <img src="media/image1.png" alt="CIA Triad Diagram">
             </div>
             <div class="concept-card">
                 <div class="concept-title">Data Security</div>
@@ -532,14 +661,15 @@
                 <div class="term-card"><div class="term-name">Private Key</div><p>A secret key that is kept private and used to decrypt data.</p><div class="example-item" style="margin-top: 10px;"><strong>Example:</strong> Only Bob has his private key, which he uses to decrypt the message Alice sent him.</div></div>
             </div>
             <div class="section-image-container" style="margin-top: 30px;">
-                 <img src="media/image2.png" alt="Encryption process diagram" loading="lazy">
+                 <img src="media/image2.png" alt="Encryption process diagram">
             </div>
         </div>
     </div>
     
     <footer>
         <div class="footer-content">
-            <p>Data Security Learning Module - Basic concepts in Data Security | Designed for Educational Purposes | By Eng. Eslam Osama</p>
+            <p>Developed by <span class="brand">EOPeak</span> | <span class="developer">Eslam Osama Saad</span></p>
+            <p>© 2025 ECE4304 Data Security | AASTMT Computer Engineering</p>
             <div class="copyright-notice">
                 <button class="copyright-btn" onclick="showCopyrightNotice()">
                     <i class="fas fa-copyright"></i> Copyright Notice
@@ -571,9 +701,11 @@
             if (mode === 'dark') {
                 root.setAttribute('data-theme', 'dark');
                 themeSwitch.classList.add('dark');
+                themeSwitch.setAttribute('aria-pressed', 'true');
             } else {
                 root.removeAttribute('data-theme');
                 themeSwitch.classList.remove('dark');
+                themeSwitch.setAttribute('aria-pressed', 'false');
             }
             localStorage.setItem('theme', mode);
         }
@@ -856,6 +988,113 @@
                 cleanupAfterCanvas();
                 hideLoading();
             }
+        }
+        
+        // --- ENTERPRISE ERROR HANDLING ---
+        // Global error handler for unhandled errors
+        window.addEventListener('error', (event) => {
+            // Filter out chrome-extension related errors
+            if (event.filename && event.filename.includes('chrome-extension://')) {
+                event.preventDefault();
+                return false;
+            }
+
+            // Log other errors for debugging (in development)
+            if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+                console.error('Global error:', event.error);
+            }
+
+            // Prevent error from bubbling up
+            event.preventDefault();
+            return false;
+        });
+
+        // Global handler for unhandled promise rejections
+        window.addEventListener('unhandledrejection', (event) => {
+            // Filter out chrome-extension related errors
+            if (event.reason && event.reason.message &&
+                event.reason.message.includes('chrome-extension://')) {
+                event.preventDefault();
+                return false;
+            }
+
+            // Log other rejections for debugging (in development)
+            if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+                console.error('Unhandled promise rejection:', event.reason);
+            }
+
+            // Prevent error from bubbling up
+            event.preventDefault();
+            return false;
+        });
+
+        // Suppress unnecessary console warnings in production
+        if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
+            const originalWarn = console.warn;
+            const originalError = console.error;
+
+            console.warn = (...args) => {
+                // Filter out common noise warnings
+                const message = args.join(' ');
+                if (message.includes('Download the React DevTools') ||
+                    message.includes('chrome-extension://') ||
+                    message.includes('Manifest: property') ||
+                    message.includes('IntersectionObserver')) {
+                    return; // Suppress these warnings
+                }
+                originalWarn.apply(console, args);
+            };
+
+            console.error = (...args) => {
+                // Filter out common noise errors
+                const message = args.join(' ');
+                if (message.includes('chrome-extension://') ||
+                    message.includes('Manifest: property') ||
+                    message.includes('Failed to load resource') && message.includes('favicon')) {
+                    return; // Suppress these errors
+                }
+                originalError.apply(console, args);
+            };
+        }
+
+        // Network status monitoring
+        window.addEventListener('online', () => {
+            console.log('[Network] Connection restored');
+            // Optional: Show notification or refresh content
+        });
+
+        window.addEventListener('offline', () => {
+            console.log('[Network] Connection lost');
+            // Optional: Show offline notification
+        });
+
+        // --- SERVICE WORKER REGISTRATION ---
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then((registration) => {
+                        console.log('[SW] Registered successfully:', registration.scope);
+
+                        // Handle updates
+                        registration.addEventListener('updatefound', () => {
+                            const newWorker = registration.installing;
+                            if (newWorker) {
+                                newWorker.addEventListener('statechange', () => {
+                                    if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                                        // New version available
+                                        if (confirm('A new version is available. Reload to update?')) {
+                                            newWorker.postMessage({ type: 'SKIP_WAITING' });
+                                            window.location.reload();
+                                        }
+                                    }
+                                });
+                            }
+                        });
+                    })
+                    .catch((error) => {
+                        console.error('[SW] Registration failed:', error);
+                    });
+            });
         }
         
         // --- INITIALIZATION ---

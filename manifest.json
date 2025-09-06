@@ -1,0 +1,114 @@
+{
+    "name": "Data Security Learning Module",
+    "short_name": "Data Security",
+    "description": "Interactive learning platform for data security fundamentals. Master CIA Triad, authentication, encryption, and cybersecurity threats.",
+    "version": "1.0.0",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#E0F7FA",
+    "theme_color": "#00ACC1",
+    "orientation": "portrait-primary",
+    "scope": "/",
+    "lang": "en",
+    "dir": "ltr",
+    "categories": ["education", "productivity", "security"],
+    "icons": [
+        {
+            "src": "assets/favicon.svg",
+            "sizes": "16x16 32x32 48x48 64x64 128x128 256x256",
+            "type": "image/svg+xml",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "assets/logo.svg",
+            "sizes": "192x192",
+            "type": "image/svg+xml",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "assets/logo.svg",
+            "sizes": "512x512",
+            "type": "image/svg+xml",
+            "purpose": "any maskable"
+        }
+    ],
+    "shortcuts": [
+        {
+            "name": "Basic Concepts",
+            "short_name": "Basics",
+            "description": "Learn the CIA Triad and fundamental concepts",
+            "url": "/#basics",
+            "icons": [
+                {
+                    "src": "assets/favicon.svg",
+                    "sizes": "96x96"
+                }
+            ]
+        },
+        {
+            "name": "Security Threats",
+            "short_name": "Threats",
+            "description": "Explore common security threats",
+            "url": "/#threats",
+            "icons": [
+                {
+                    "src": "assets/favicon.svg",
+                    "sizes": "96x96"
+                }
+            ]
+        },
+        {
+            "name": "Authentication",
+            "short_name": "Auth",
+            "description": "Learn authentication and authorization",
+            "url": "/#auth",
+            "icons": [
+                {
+                    "src": "assets/favicon.svg",
+                    "sizes": "96x96"
+                }
+            ]
+        },
+        {
+            "name": "Security Attacks",
+            "short_name": "Attacks",
+            "description": "Understand different types of attacks",
+            "url": "/#attacks",
+            "icons": [
+                {
+                    "src": "assets/favicon.svg",
+                    "sizes": "96x96"
+                }
+            ]
+        },
+        {
+            "name": "Terminology",
+            "short_name": "Terms",
+            "description": "Key terms and definitions",
+            "url": "/#terms",
+            "icons": [
+                {
+                    "src": "assets/favicon.svg",
+                    "sizes": "96x96"
+                }
+            ]
+        }
+    ],
+    "related_applications": [],
+    "prefer_related_applications": false,
+    "iarc_rating_id": "",
+    "screenshots": [
+        {
+            "src": "media/image1.png",
+            "sizes": "800x600",
+            "type": "image/png",
+            "label": "CIA Triad Diagram"
+        },
+        {
+            "src": "media/image2.png",
+            "sizes": "800x600",
+            "type": "image/png",
+            "label": "Encryption Process Diagram"
+        }
+    ]
+}

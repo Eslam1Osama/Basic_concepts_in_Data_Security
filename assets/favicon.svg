@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!-- 
+    Professional SVG Favicon for "Basic Concepts in Data Security"
+    Author: Gemini
+    Version: 2.0
+    Description: An enhanced and simplified favicon matching the main logo, combining a shield and a padlock with a book-shaped keyhole for a more polished look.
+  -->
+  <defs>
+    <!-- Professional Color Palette matching the main logo -->
+    <linearGradient id="faviconMainGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4338CA;" />
+      <stop offset="100%" style="stop-color:#6D28D9;" />
+    </linearGradient>
+    <linearGradient id="faviconPadlockGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#EDE9FE;" />
+      <stop offset="100%" style="stop-color:#C4B5FD;" />
+    </linearGradient>
+
+    <!-- Refined Shadow Filter for a cleaner favicon appearance -->
+    <filter id="faviconShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="1" stdDeviation="1.5" flood-color="#3730A3" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <!-- Icon Group: Shield with integrated Padlock/Book Symbol -->
+  <g transform="translate(3, 3)" filter="url(#faviconShadow)">
+    <!-- Main Shield Body -->
+    <path d="M13 0 C 26 0, 26 7, 26 13 C 26 19, 21 25, 13 26 C 5 25, 0 19, 0 13 C 0 7, 0 0, 13 0 Z" fill="url(#faviconMainGradient)"/>
+    
+    <!-- Shield Highlight for a subtle sheen -->
+    <path d="M13 0 C 8 1, 5 5, 6 13" fill="none" stroke="#A5B4FC" stroke-width="0.75" stroke-opacity="0.3"/>
+
+    <!-- Enhanced Padlock Symbol -->
+    <g transform="translate(13, 16)">
+      <!-- Padlock Shackle -->
+      <path d="M0 -5 C 4 -5, 4 -2, 4 0 L 3 0 C 3 -1.5, 2.5 -3.5, 0 -3.5 C -2.5 -3.5, -3 -1.5, -3 0 L -4 0 C -4 -2, -4 -5, 0 -5 Z" fill="url(#faviconPadlockGradient)"/>
+      <!-- Padlock Body -->
+      <rect x="-6" y="-1" width="12" height="8" rx="1.5" fill="url(#faviconPadlockGradient)" stroke="#4338CA" stroke-width="1"/>
+      <!-- Book-shaped Keyhole (Refined for clarity) -->
+      <path d="M-0.5 2 C -2 2, -2 4, -0.5 4 M 0.5 2 C 2 2, 2 4, 0.5 4" stroke="#4338CA" stroke-width="1" fill="none" stroke-linecap="round"/>
+    </g>
+  </g>
+</svg>
+

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offline - Data Security Learning Module</title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <style>
+        :root {
+            --primary: #00ACC1;
+            --secondary: #4DD0E1;
+            --accent: #80DEEA;
+            --blue1: #B2EBF2;
+            --blue2: #E0F7FA;
+            --blue3: #F3FBFC;
+            --text-main: #00323d;
+            --text-secondary: #006978;
+            --bg-gradient: linear-gradient(135deg, var(--primary) 0%, var(--blue2) 100%);
+            --section-bg: rgba(255,255,255,0.98);
+            --header-bg: rgba(255,255,255,0.85);
+            --shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background: var(--bg-gradient);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .offline-container {
+            background: var(--section-bg);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 600px;
+            box-shadow: var(--shadow);
+            margin: 20px;
+        }
+
+        .offline-icon {
+            font-size: 4rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: var(--text-main);
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            opacity: 0.8;
+        }
+
+        .retry-btn {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .retry-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .features {
+            margin-top: 30px;
+            text-align: left;
+        }
+
+        .features h3 {
+            color: var(--secondary);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .features ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .features li {
+            padding: 8px 0;
+            border-bottom: 1px solid var(--blue1);
+        }
+
+        .features li:last-child {
+            border-bottom: none;
+        }
+
+        .features li:before {
+            content: "🔒";
+            margin-right: 10px;
+        }
+
+        @media (max-width: 480px) {
+            .offline-container {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 1.6rem;
+            }
+
+            .offline-icon {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="offline-container">
+        <div class="offline-icon">
+            <i class="fas fa-wifi-slash"></i>
+        </div>
+
+        <h1>You're Offline</h1>
+
+        <p>You appear to be offline. Don't worry! You can still access some features of the Data Security Learning Module when you're back online.</p>
+
+        <p>This offline page ensures you can always access the core learning content even without an internet connection.</p>
+
+        <button class="retry-btn" onclick="window.location.reload()">
+            <i class="fas fa-redo"></i> Try Again
+        </button>
+
+        <div class="features">
+            <h3>What you can do offline:</h3>
+            <ul>
+                <li>Access previously loaded content</li>
+                <li>Review cached learning materials</li>
+                <li>Navigate between sections</li>
+                <li>Access downloaded resources</li>
+                <li>Continue your learning progress</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Check network status and reload when back online
+        window.addEventListener('online', function() {
+            // Small delay to ensure connection is stable
+            setTimeout(() => {
+                window.location.reload();
+            }, 1000);
+        });
+
+        // Service worker message handling for offline updates
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.addEventListener('message', (event) => {
+                if (event.data && event.data.type === 'UPDATE_AVAILABLE') {
+                    // Handle update notifications if needed
+                    console.log('Update available');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
